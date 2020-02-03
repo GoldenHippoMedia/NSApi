@@ -114,4 +114,6 @@ var recurringId = locateRecurringRecord(string)
 
 > Ensure that the string is formatted properly.
 
+The search string needs to be in the form of 1scRecurringId-mid (e.g. `123456-654321`)
+
 
