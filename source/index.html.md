@@ -17,106 +17,62 @@ includes:
 search: true
 ---
 
+
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome the GHM NetSuite API Guide. This guide will show you the functions created for our internal NetSuite development records.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
-# Authentication
 
-> To authorize, use this code:
 
-```ruby
-require 'kittn'
+# 1SC Continuity
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+## Listener Functions
+
+### Update Continuity Record
+
+```typescript
+//Include in imports
+import {importRecurringOrder, updateRecurringOrder} from './GH_1scContinuityFunctions'
+
+//Sample of in use
+let recurringUpdate = updateRecurringOrder(recurringObject)
 ```
 
-```python
-import kittn
 
-api = kittn.authorize('meowmeowmeow')
+```typescript
+//Include in imports
+import {importRecurringOrder, updateRecurringOrder} from './GH_1scContinuityFunctions'
+
+//Sample of in use
+let recurringUpdate = updateRecurringOrder(recurringObject)
 ```
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+> The above requires a recurringObject that is structured as such:
+
+```typescript
+interface RecurringObj {
+    id: number,
+    brand: number,
+    mid: string,
+    apiKey: string,
+    status?: string
+}
 ```
+#### Recurring Object Parameters
 
-```javascript
-const kittn = require('kittn');
+Parameter | Type | Description
+--------- | ------- | -----------
+id | number | This is the 1SC ID of the recurring record.
+brand | number | This is the internal ID of the brand record that this record belongs to.
+mid | string | The MID of the 1ShoppingCart cart this belongs to.
+apiKey | string | The API Key generated from 1ShoppingCart for this cart listener.
+status | string | (Optional) The status of the recurring record, required for update function.
 
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
+This function locates an existing recurring order, or creates one if it doesn't exist.
 
 ### HTTP Request
 
