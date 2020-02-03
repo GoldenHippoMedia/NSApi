@@ -1,0 +1,414 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-a1ce949a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;javascript&quot;,&quot;typescript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-f093cfc9.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="typescript">typescript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#sales-order" class="toc-h1 toc-link" data-title="Sales Order">Sales Order</a>
+          </li>
+          <li>
+            <a href="#return-authorization" class="toc-h1 toc-link" data-title="Return Authorization">Return Authorization</a>
+          </li>
+          <li>
+            <a href="#cases" class="toc-h1 toc-link" data-title="Cases">Cases</a>
+          </li>
+          <li>
+            <a href="#tcr-continuity" class="toc-h1 toc-link" data-title="TCR Continuity">TCR Continuity</a>
+          </li>
+          <li>
+            <a href="#1sc-continuity" class="toc-h1 toc-link" data-title="1SC Continuity">1SC Continuity</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#update-continuity-record" class="toc-h2 toc-link" data-title="Update Continuity Record">Update Continuity Record</a>
+                  </li>
+                  <li>
+                    <a href="#create-continuity-record" class="toc-h2 toc-link" data-title="Create Continuity Record">Create Continuity Record</a>
+                  </li>
+                  <li>
+                    <a href="#locate-recurring-record" class="toc-h2 toc-link" data-title="Locate Recurring Record">Locate Recurring Record</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome the GHM NetSuite API Guide. This guide will show you the functions created for our internal NetSuite development records.</p>
+
+<p>You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+
+<p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<h1 id='sales-order'>Sales Order</h1><h1 id='return-authorization'>Return Authorization</h1><h1 id='cases'>Cases</h1><h1 id='tcr-continuity'>TCR Continuity</h1><h1 id='1sc-continuity'>1SC Continuity</h1>
+<aside class="success">
+
+These functions are located in the GH_1scContinuityFunctions library.
+
+</aside>
+<h2 id='update-continuity-record'>Update Continuity Record</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">//Include in defines</span>
+<span class="nx">define</span><span class="p">([</span><span class="s2">"./GH_1scContinuityFunctions"</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">GH_1scContinuityFunctions</span><span class="p">)</span>
+
+<span class="c1">//Sample in use</span>
+<span class="kd">var</span> <span class="nx">recurringUpdate</span> <span class="o">=</span> <span class="nx">GH_1scContinuityFunctions</span><span class="p">.</span><span class="nx">updateRecurringOrder</span><span class="p">(</span><span class="nx">recurringObject</span><span class="p">)</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="c1">//Include in imports</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">updateRecurringOrder</span><span class="p">}</span> <span class="k">from</span> <span class="s1">'./GH_1scContinuityFunctions'</span>
+
+<span class="c1">//Sample in use</span>
+<span class="kd">let</span> <span class="nx">recurringUpdate</span> <span class="o">=</span> <span class="nx">updateRecurringOrder</span><span class="p">(</span><span class="nx">recurringObject</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above requires a recurringObject that is structured as such:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="err">brand</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="err">mid</span><span class="p">:</span><span class="w"> </span><span class="s2">"midValue"</span><span class="p">,</span><span class="w">
+    </span><span class="err">apiKey</span><span class="p">:</span><span class="w"> </span><span class="s2">"apiKeyValue"</span><span class="p">,</span><span class="w">
+    </span><span class="err">status</span><span class="p">:</span><span class="w"> </span><span class="s2">"statusValue"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This function locates an existing recurring order, or creates one if it doesn&#39;t exist. It does not contact 1SC directly unless a new record is required.</p>
+<h4 id='recurring-object-parameters'>Recurring Object Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>This is the 1SC ID of the recurring record.</td>
+</tr>
+<tr>
+<td>brand</td>
+<td>number</td>
+<td>This is the internal ID of the brand record that this record belongs to.</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>string</td>
+<td>The MID of the 1ShoppingCart cart this belongs to.</td>
+</tr>
+<tr>
+<td>apiKey</td>
+<td>string</td>
+<td>The API Key generated from 1ShoppingCart for this cart listener.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>(Optional) The status of the recurring record, required for update function.</td>
+</tr>
+</tbody></table>
+<h2 id='create-continuity-record'>Create Continuity Record</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">//Include in defines</span>
+<span class="nx">define</span><span class="p">([</span><span class="s2">"./GH_1scContinuityFunctions"</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">GH_1scContinuityFunctions</span><span class="p">)</span>
+
+<span class="c1">//Sample in use</span>
+<span class="kd">var</span> <span class="nx">importRecurring</span> <span class="o">=</span> <span class="nx">GH_1scContinuityFunctions</span><span class="p">.</span><span class="nx">importRecurringOrder</span><span class="p">(</span><span class="nx">recurringObject</span><span class="p">)</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="c1">//Include in imports</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">importRecurringOrder</span><span class="p">}</span> <span class="k">from</span> <span class="s1">'./GH_1scContinuityFunctions'</span>
+
+<span class="c1">//Sample in use</span>
+<span class="kd">let</span> <span class="nx">importRecurring</span> <span class="o">=</span> <span class="nx">importRecurringOrder</span><span class="p">(</span><span class="nx">recurringObject</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above requires a recurringObject that is structured as such:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="err">brand</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="err">mid</span><span class="p">:</span><span class="w"> </span><span class="s2">"midValue"</span><span class="p">,</span><span class="w">
+    </span><span class="err">apiKey</span><span class="p">:</span><span class="w"> </span><span class="s2">"apiKeyValue"</span><span class="p">,</span><span class="w">
+    </span><span class="err">status</span><span class="p">:</span><span class="w"> </span><span class="s2">"statusValue"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This function creates a new 1SC Continuity Record by calling 1SC directly.</p>
+<h4 id='recurring-object-parameters-2'>Recurring Object Parameters</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>number</td>
+<td>This is the 1SC ID of the recurring record.</td>
+</tr>
+<tr>
+<td>brand</td>
+<td>number</td>
+<td>This is the internal ID of the brand record that this record belongs to.</td>
+</tr>
+<tr>
+<td>mid</td>
+<td>string</td>
+<td>The MID of the 1ShoppingCart cart this belongs to.</td>
+</tr>
+<tr>
+<td>apiKey</td>
+<td>string</td>
+<td>The API Key generated from 1ShoppingCart for this cart listener.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>(Optional) The status of the recurring record, required for update function.</td>
+</tr>
+</tbody></table>
+<h2 id='locate-recurring-record'>Locate Recurring Record</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">//Include in defines</span>
+<span class="nx">define</span><span class="p">([</span><span class="s2">"./GH_1scContinuityFunctions"</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">GH_1scContinuityFunctions</span><span class="p">)</span>
+
+<span class="c1">//Sample in use</span>
+<span class="kd">var</span> <span class="nx">recurringId</span> <span class="o">=</span> <span class="nx">GH_1scContinuityFunctions</span><span class="p">.</span><span class="nx">locateRecurringRecord</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="c1">//Include in imports</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">locateRecurringRecord</span><span class="p">}</span> <span class="k">from</span> <span class="s1">'./GH_1scContinuityFunctions'</span>
+
+<span class="c1">//Sample in use</span>
+<span class="kd">var</span> <span class="nx">recurringId</span> <span class="o">=</span> <span class="nx">locateRecurringRecord</span><span class="p">(</span><span class="kr">string</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Ensure that the string is formatted properly.</p>
+</blockquote>
+
+<p>This function allows you to locate a recurring record in NetSuite by providing a search string. It will return false if no record is found, otherwise it will return the internal ID of the record.</p>
+
+<aside class='notice'>The search string needs to be in the form of 1scRecurringId-mid (e.g. `123456-654321`)</aside>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="typescript">typescript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
