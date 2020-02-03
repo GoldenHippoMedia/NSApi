@@ -12,7 +12,7 @@ These functions are located in the GH_1scContinuityFunctions library.
 //Include in defines
 define(["./GH_1scContinuityFunctions"], function (GH_1scContinuityFunctions)
 
-//Sample of in use
+//Sample in use
 var recurringUpdate = GH_1scContinuityFunctions.updateRecurringOrder(recurringObject)
 ```
 
@@ -21,7 +21,7 @@ var recurringUpdate = GH_1scContinuityFunctions.updateRecurringOrder(recurringOb
 //Include in imports
 import {updateRecurringOrder} from './GH_1scContinuityFunctions'
 
-//Sample of in use
+//Sample in use
 let recurringUpdate = updateRecurringOrder(recurringObject)
 ```
 
@@ -56,7 +56,7 @@ status | string | (Optional) The status of the recurring record, required for up
 //Include in defines
 define(["./GH_1scContinuityFunctions"], function (GH_1scContinuityFunctions)
 
-//Sample of in use
+//Sample in use
 var importRecurring = GH_1scContinuityFunctions.importRecurringOrder(recurringObject)
 ```
 
@@ -65,7 +65,7 @@ var importRecurring = GH_1scContinuityFunctions.importRecurringOrder(recurringOb
 //Include in imports
 import {importRecurringOrder} from './GH_1scContinuityFunctions'
 
-//Sample of in use
+//Sample in use
 let importRecurring = importRecurringOrder(recurringObject)
 ```
 
@@ -99,7 +99,7 @@ status | string | (Optional) The status of the recurring record, required for up
 //Include in defines
 define(["./GH_1scContinuityFunctions"], function (GH_1scContinuityFunctions)
 
-//Sample of use
+//Sample in use
 var recurringId = GH_1scContinuityFunctions.locateRecurringRecord(string)
 ```
 
@@ -107,15 +107,14 @@ var recurringId = GH_1scContinuityFunctions.locateRecurringRecord(string)
 //Include in imports
 import {locateRecurringRecord} from './GH_1scContinuityFunctions'
 
-//Sample of use
+//Sample in use
 var recurringId = locateRecurringRecord(string)
 ```
 
 > Ensure that the string is formatted properly.
 
-This function allows you to locate a recurring record by providing a search string.
+This function allows you to locate a recurring record in NetSuite by providing a search string. It will return false if no record is found, otherwise it will return the internal ID of the record.
 
-It will return false if no record is found, otherwise it will return the internal ID of the record.
 
 <aside class='notice'>The search string needs to be in the form of 1scRecurringId-mid (e.g. `123456-654321`)</aside>
 
