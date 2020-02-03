@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Golden Hippo API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -229,7 +229,7 @@
             <a href="#return-authorization" class="toc-h1 toc-link" data-title="Return Authorization">Return Authorization</a>
           </li>
           <li>
-            <a href="#cases" class="toc-h1 toc-link" data-title="Cases">Cases</a>
+            <a href="#case" class="toc-h1 toc-link" data-title="Case">Case</a>
           </li>
           <li>
             <a href="#tcr-continuity" class="toc-h1 toc-link" data-title="TCR Continuity">TCR Continuity</a>
@@ -250,8 +250,7 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://goldenhippo.com' target='_blank'>Golden Hippo 2020 </a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -263,7 +262,7 @@
 <p>You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 
 <p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='sales-order'>Sales Order</h1><h1 id='return-authorization'>Return Authorization</h1><h1 id='cases'>Cases</h1><h1 id='tcr-continuity'>TCR Continuity</h1><h1 id='1sc-continuity'>1SC Continuity</h1>
+<h1 id='sales-order'>Sales Order</h1><h1 id='return-authorization'>Return Authorization</h1><h1 id='case'>Case</h1><h1 id='tcr-continuity'>TCR Continuity</h1><h1 id='1sc-continuity'>1SC Continuity</h1>
 <aside class="success">
 
 These functions are located in the GH_1scContinuityFunctions library.
@@ -281,7 +280,7 @@ These functions are located in the GH_1scContinuityFunctions library.
 <span class="kd">let</span> <span class="nx">recurringUpdate</span> <span class="o">=</span> <span class="nx">updateRecurringOrder</span><span class="p">(</span><span class="nx">recurringObject</span><span class="p">)</span>
 </code></pre>
 <blockquote>
-<p>The above requires a recurringObject that is structured as such:</p>
+<p>recurringObject is a JSON object that is structured as such:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
@@ -338,7 +337,7 @@ These functions are located in the GH_1scContinuityFunctions library.
 <span class="kd">let</span> <span class="nx">importRecurring</span> <span class="o">=</span> <span class="nx">importRecurringOrder</span><span class="p">(</span><span class="nx">recurringObject</span><span class="p">)</span>
 </code></pre>
 <blockquote>
-<p>The above requires a recurringObject that is structured as such:</p>
+<p>recurringObject is a JSON object that is structured as such:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
