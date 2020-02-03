@@ -25,7 +25,7 @@ import {updateRecurringOrder} from './GH_1scContinuityFunctions'
 let recurringUpdate = updateRecurringOrder(recurringObject)
 ```
 
-> The above requires a recurringObject that is structured as such:
+> recurringObject is a JSON object that is structured as such:
 
 ```json
 {
@@ -69,7 +69,7 @@ import {importRecurringOrder} from './GH_1scContinuityFunctions'
 let importRecurring = importRecurringOrder(recurringObject)
 ```
 
-> The above requires a recurringObject that is structured as such:
+> recurringObject is a JSON object that is structured as such:
 
 ```json
 {
