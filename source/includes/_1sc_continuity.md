@@ -9,11 +9,11 @@ These functions are located in the GH_1scContinuityFunctions library.
 ## Update Continuity Record
 
 ```javascript
-//Include in imports
-import {updateRecurringOrder} from './GH_1scContinuityFunctions'
+//Include in defines
+define(["./GH_1scContinuityFunctions"], function (GH_1scContinuityFunctions)
 
 //Sample of in use
-var recurringUpdate = updateRecurringOrder(recurringObject)
+var recurringUpdate = GH_1scContinuityFunctions.updateRecurringOrder(recurringObject)
 ```
 
 
@@ -53,11 +53,11 @@ status | string | (Optional) The status of the recurring record, required for up
 ## Create Continuity Record
 
 ```javascript
-//Include in imports
-import {importRecurringOrder} from './GH_1scContinuityFunctions'
+//Include in defines
+define(["./GH_1scContinuityFunctions"], function (GH_1scContinuityFunctions)
 
 //Sample of in use
-var importRecurring = importRecurringOrder(recurringObject)
+var importRecurring = GH_1scContinuityFunctions.importRecurringOrder(recurringObject)
 ```
 
 
@@ -96,11 +96,11 @@ status | string | (Optional) The status of the recurring record, required for up
 ## Locate Recurring Record
 
 ```javascript
-//Include in imports
-import {locateRecurringRecord} from './GH_1scContinuityFunctions'
+//Include in defines
+define(["./GH_1scContinuityFunctions"], function (GH_1scContinuityFunctions)
 
 //Sample of use
-var recurringId = locateRecurringRecord(string)
+var recurringId = GH_1scContinuityFunctions.locateRecurringRecord(string)
 ```
 
 ```typescript
