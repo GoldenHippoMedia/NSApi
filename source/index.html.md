@@ -1,13 +1,13 @@
 ---
-title: API Reference
+title: Golden Hippo API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
   - typescript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://goldenhippo.com' target='_blank'>Golden Hippo 2020 </a>
+
 
 includes:
 
