@@ -1,14 +1,12 @@
 # 1SC Continuity
 
-<aside>
+<aside class="success">
 
 These functions are located in the GH_1scContinuityFunctions library.
 
 </aside>
 
 ## Update Continuity Record
-
-This function locates an existing recurring order, or creates one if it doesn't exist. It does not contact 1SC directly unless a new record is required.
 
 ```javascript
 //Include in imports
@@ -38,6 +36,9 @@ let recurringUpdate = updateRecurringOrder(recurringObject)
     status: "statusValue"
 }
 ```
+
+This function locates an existing recurring order, or creates one if it doesn't exist. It does not contact 1SC directly unless a new record is required.
+
 #### Recurring Object Parameters
 
 Parameter | Type | Description
@@ -50,8 +51,6 @@ status | string | (Optional) The status of the recurring record, required for up
 
 
 ## Create Continuity Record
-
-This function creates a new 1SC Continuity Record by calling 1SC directly.
 
 ```javascript
 //Include in imports
@@ -81,6 +80,9 @@ let importRecurring = importRecurringOrder(recurringObject)
     status: "statusValue"
 }
 ```
+
+This function creates a new 1SC Continuity Record by calling 1SC directly.
+
 #### Recurring Object Parameters
 
 Parameter | Type | Description
@@ -92,9 +94,6 @@ apiKey | string | The API Key generated from 1ShoppingCart for this cart listene
 status | string | (Optional) The status of the recurring record, required for update function.
 
 ## Locate Recurring Record
-This function allows you to locate a recurring record by providing a search string.
-
-It will return false if no record is found, otherwise it will return the internal ID of the record.
 
 ```javascript
 //Include in imports
@@ -114,6 +113,10 @@ var recurringId = locateRecurringRecord(string)
 
 > Ensure that the string is formatted properly.
 
-The search string needs to be in the form of 1scRecurringId-mid (e.g. `123456-654321`)
+This function allows you to locate a recurring record by providing a search string.
+
+It will return false if no record is found, otherwise it will return the internal ID of the record.
+
+<aside class='notice'>The search string needs to be in the form of 1scRecurringId-mid (e.g. `123456-654321`)</aside>
 
 
