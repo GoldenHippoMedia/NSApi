@@ -223,7 +223,23 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
+            <a href="#general-functions" class="toc-h1 toc-link" data-title="General Functions">General Functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#overview" class="toc-h2 toc-link" data-title="Overview">Overview</a>
+                  </li>
+                  <li>
+                    <a href="#get-subsidiary-by-brand" class="toc-h2 toc-link" data-title="Get Subsidiary by Brand">Get Subsidiary by Brand</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#sales-order" class="toc-h1 toc-link" data-title="Sales Order">Sales Order</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#update-commitment-status" class="toc-h2 toc-link" data-title="Update Commitment Status">Update Commitment Status</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#return-authorization" class="toc-h1 toc-link" data-title="Return Authorization">Return Authorization</a>
@@ -262,19 +278,98 @@
 <p>You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 
 <p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='sales-order'>Sales Order</h1><h1 id='return-authorization'>Return Authorization</h1><h1 id='case'>Case</h1><h1 id='tcr-continuity'>TCR Continuity</h1><h1 id='1sc-continuity'>1SC Continuity</h1>
+<h1 id='general-functions'>General Functions</h1><h2 id='overview'>Overview</h2>
+<aside class="success">
+These functions are located in the gh_generalFunctions library.
+</aside>
+
+<p>This section contains the general functions that have been developed for the Golden Hippo custom environment.
+They may rely on custom fields that are prevalent throughout the environment, but those areas will be noted in the examples.</p>
+<h2 id='get-subsidiary-by-brand'>Get Subsidiary by Brand</h2>
+<blockquote>
+<p>This function requires the custom record &#39;customrecord_ghm_brand_subs_list&#39;</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">//Include in defines</span>
+<span class="nx">define</span><span class="p">([</span><span class="s2">"../ghmfiles/gh_generalFunctions"</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">gh</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="c1">//Sample in use</span>
+    <span class="kd">var</span> <span class="nx">brandId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">returnedSubId</span> <span class="o">=</span> <span class="nx">gh</span><span class="p">.</span><span class="nx">lookupSubByBrand</span><span class="p">(</span><span class="nx">brandId</span><span class="p">)</span>
+<span class="p">};</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="c1">//Include in imports</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">lookupSubByBrand</span><span class="p">}</span> <span class="k">from</span> <span class="p">(</span><span class="s2">"../ghmfiles/gh_generalFunctions"</span><span class="p">);</span>
+
+<span class="c1">//Sample in use</span>
+<span class="kd">let</span> <span class="nx">brandId</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="kd">let</span> <span class="nx">returnedSubId</span> <span class="o">=</span> <span class="nx">lookupSubByBrand</span><span class="p">(</span><span class="nx">brandId</span> <span class="k">as</span> <span class="kr">number</span><span class="p">);</span>
+</code></pre>
+<p>Lookup subsidiary internal ID by providing the brand ID as an integer (number)</p>
+
+<ul>
+<li><p>1 Governance Unit</p></li>
+<li><p>@param brandId</p></li>
+</ul>
+
+<p>This will return the internal ID as a number.</p>
+<h1 id='sales-order'>Sales Order</h1><h2 id='update-commitment-status'>Update Commitment Status</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">//Include in defines</span>
+<span class="nx">define</span><span class="p">([</span><span class="s2">"../ghmfiles/gh_salesOrderLib"</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">gh_salesOrderLib</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="c1">//Sample in use</span>
+    <span class="kd">var</span> <span class="nx">soId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">commitStatus</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">commitResults</span> <span class="o">=</span> <span class="nx">gh_salesOrderLib</span><span class="p">.</span><span class="nx">updateAllCommitments</span><span class="p">(</span><span class="nx">soId</span><span class="p">,</span> <span class="nx">commitStatus</span><span class="p">);</span> <span class="c1">//30 Units</span>
+<span class="p">})</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="c1">//Include in imports</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">updateAllCommitments</span><span class="p">}</span> <span class="k">from</span> <span class="s2">"../ghmfiles/gh_salesOrderLib"</span><span class="p">;</span>
+
+<span class="c1">//Sample in use</span>
+<span class="kd">let</span> <span class="nx">soId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">commitStatus</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">commitResults</span> <span class="o">=</span> <span class="nx">updateAllCommitments</span><span class="p">(</span><span class="nx">soId</span><span class="p">,</span> <span class="nx">commitStatus</span><span class="p">);</span>
+</code></pre>
+<p>Set the commitment value on all line items of an order. This requires providing the internal ID of the Sales Order as a number and the internal ID of the commitment status as a number (refer to table below)</p>
+
+<ul>
+<li><p>30 Governance Units</p></li>
+<li><p>@param orderId</p></li>
+<li><p>@param commitStatus</p></li>
+</ul>
+<h3 id='commitment-status'>Commitment Status</h3>
+<p>Use this table to determine the commitment status you would like to pass.</p>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Internal ID</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Available Quantity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Complete Quantity</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Do Not Commit</td>
+<td>2</td>
+</tr>
+</tbody></table>
+<h1 id='return-authorization'>Return Authorization</h1><h1 id='case'>Case</h1><h1 id='tcr-continuity'>TCR Continuity</h1><h1 id='1sc-continuity'>1SC Continuity</h1>
 <aside class="success">
 
 These functions are located in the GH_1scContinuityFunctions library.
 
 </aside>
 <h2 id='update-continuity-record'>Update Continuity Record</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">//Include in defines</span>
-<span class="nx">define</span><span class="p">([</span><span class="s2">"./GH_1scContinuityFunctions"</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">GH_1scContinuityFunctions</span><span class="p">)</span>
+<span class="nx">define</span><span class="p">([</span><span class="s2">"../ghmfiles/GH_1scContinuityFunctions"</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">GH_1scContinuityFunctions</span><span class="p">){</span>
 
 <span class="c1">//Sample in use</span>
 <span class="kd">var</span> <span class="nx">recurringUpdate</span> <span class="o">=</span> <span class="nx">GH_1scContinuityFunctions</span><span class="p">.</span><span class="nx">updateRecurringOrder</span><span class="p">(</span><span class="nx">recurringObject</span><span class="p">)</span>
+<span class="p">};</span>
 </code></pre><pre class="highlight typescript tab-typescript"><code><span class="c1">//Include in imports</span>
-<span class="k">import</span> <span class="p">{</span><span class="nx">updateRecurringOrder</span><span class="p">}</span> <span class="k">from</span> <span class="s1">'./GH_1scContinuityFunctions'</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">updateRecurringOrder</span><span class="p">}</span> <span class="k">from</span> <span class="s1">'../ghmfiles/GH_1scContinuityFunctions'</span>
 
 <span class="c1">//Sample in use</span>
 <span class="kd">let</span> <span class="nx">recurringUpdate</span> <span class="o">=</span> <span class="nx">updateRecurringOrder</span><span class="p">(</span><span class="nx">recurringObject</span><span class="p">)</span>
@@ -291,6 +386,11 @@ These functions are located in the GH_1scContinuityFunctions library.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This function locates an existing recurring order, or creates one if it doesn&#39;t exist. It does not contact 1SC directly unless a new record is required.</p>
+
+<ul>
+<li><p>6 Governance Units</p></li>
+<li><p>@param recurringRecord</p></li>
+</ul>
 <h4 id='recurring-object-parameters'>Recurring Object Parameters</h4>
 <table><thead>
 <tr>
@@ -326,12 +426,12 @@ These functions are located in the GH_1scContinuityFunctions library.
 </tr>
 </tbody></table>
 <h2 id='create-continuity-record'>Create Continuity Record</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">//Include in defines</span>
-<span class="nx">define</span><span class="p">([</span><span class="s2">"./GH_1scContinuityFunctions"</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">GH_1scContinuityFunctions</span><span class="p">)</span>
+<span class="nx">define</span><span class="p">([</span><span class="s2">"../ghmfiles/GH_1scContinuityFunctions"</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">GH_1scContinuityFunctions</span><span class="p">)</span>
 
 <span class="c1">//Sample in use</span>
 <span class="kd">var</span> <span class="nx">importRecurring</span> <span class="o">=</span> <span class="nx">GH_1scContinuityFunctions</span><span class="p">.</span><span class="nx">importRecurringOrder</span><span class="p">(</span><span class="nx">recurringObject</span><span class="p">)</span>
 </code></pre><pre class="highlight typescript tab-typescript"><code><span class="c1">//Include in imports</span>
-<span class="k">import</span> <span class="p">{</span><span class="nx">importRecurringOrder</span><span class="p">}</span> <span class="k">from</span> <span class="s1">'./GH_1scContinuityFunctions'</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">importRecurringOrder</span><span class="p">}</span> <span class="k">from</span> <span class="s1">'../ghmfiles/GH_1scContinuityFunctions'</span>
 
 <span class="c1">//Sample in use</span>
 <span class="kd">let</span> <span class="nx">importRecurring</span> <span class="o">=</span> <span class="nx">importRecurringOrder</span><span class="p">(</span><span class="nx">recurringObject</span><span class="p">)</span>
@@ -348,6 +448,11 @@ These functions are located in the GH_1scContinuityFunctions library.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This function creates a new 1SC Continuity Record by calling 1SC directly.</p>
+
+<ul>
+<li><p>6 Governance Units</p></li>
+<li><p>@param recurringRecord</p></li>
+</ul>
 <h4 id='recurring-object-parameters-2'>Recurring Object Parameters</h4>
 <table><thead>
 <tr>
@@ -382,22 +487,27 @@ These functions are located in the GH_1scContinuityFunctions library.
 <td>(Optional) The status of the recurring record, required for update function.</td>
 </tr>
 </tbody></table>
-<h2 id='locate-recurring-record'>Locate Recurring Record</h2><pre class="highlight javascript tab-javascript"><code><span class="c1">//Include in defines</span>
-<span class="nx">define</span><span class="p">([</span><span class="s2">"./GH_1scContinuityFunctions"</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">GH_1scContinuityFunctions</span><span class="p">)</span>
-
-<span class="c1">//Sample in use</span>
-<span class="kd">var</span> <span class="nx">recurringId</span> <span class="o">=</span> <span class="nx">GH_1scContinuityFunctions</span><span class="p">.</span><span class="nx">locateRecurringRecord</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span>
-</code></pre><pre class="highlight typescript tab-typescript"><code><span class="c1">//Include in imports</span>
-<span class="k">import</span> <span class="p">{</span><span class="nx">locateRecurringRecord</span><span class="p">}</span> <span class="k">from</span> <span class="s1">'./GH_1scContinuityFunctions'</span>
-
-<span class="c1">//Sample in use</span>
-<span class="kd">var</span> <span class="nx">recurringId</span> <span class="o">=</span> <span class="nx">locateRecurringRecord</span><span class="p">(</span><span class="kr">string</span><span class="p">)</span>
-</code></pre>
+<h2 id='locate-recurring-record'>Locate Recurring Record</h2>
 <blockquote>
 <p>Ensure that the string is formatted properly.</p>
 </blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">//Include in defines</span>
+<span class="nx">define</span><span class="p">([</span><span class="s2">"../ghmfiles/GH_1scContinuityFunctions"</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">GH_1scContinuityFunctions</span><span class="p">)</span>
 
+<span class="c1">//Sample in use</span>
+<span class="kd">var</span> <span class="nx">recurringId</span> <span class="o">=</span> <span class="nx">GH_1scContinuityFunctions</span><span class="p">.</span><span class="nx">locateRecurringRecord</span><span class="p">(</span><span class="nx">externalId</span><span class="p">)</span>
+</code></pre><pre class="highlight typescript tab-typescript"><code><span class="c1">//Include in imports</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">locateRecurringRecord</span><span class="p">}</span> <span class="k">from</span> <span class="s1">'../ghmfiles/GH_1scContinuityFunctions'</span>
+
+<span class="c1">//Sample in use</span>
+<span class="kd">let</span> <span class="nx">recurringId</span> <span class="o">=</span> <span class="nx">locateRecurringRecord</span><span class="p">(</span><span class="nx">externalId</span><span class="p">)</span>
+</code></pre>
 <p>This function allows you to locate a recurring record in NetSuite by providing a search string. It will return false if no record is found, otherwise it will return the internal ID of the record.</p>
+
+<ul>
+<li><p>10 Governance Units</p></li>
+<li><p>@param externalId</p></li>
+</ul>
 
 <aside class='notice'>The search string needs to be in the form of 1scRecurringId-mid (e.g. `123456-654321`)</aside>
 
