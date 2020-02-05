@@ -10,7 +10,7 @@ toc_footers:
 
 
 includes:
-
+  - general_functions
   - salesOrders
   - rma
   - cases
