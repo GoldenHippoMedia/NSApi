@@ -1,13 +1,12 @@
 ---
 title: Golden Hippo API Reference
 
-language_tabs: # must be one of https://git.io/vQNgJ
+language_tabs:
   - javascript
   - typescript
 
 toc_footers:
   - <a href='https://goldenhippo.com' target='_blank'>Golden Hippo 2020 </a>
-
 
 includes:
   - general_functions
