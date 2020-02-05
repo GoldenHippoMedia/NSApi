@@ -23,7 +23,9 @@ let commitStatus = 1;
 let commitResults = updateAllCommitments(soId, commitStatus);
 ```
 
-Set the commitment value on all line items of an order. This requires providing the internal ID of the Sales Order as a number and the internal ID of the commitment status as a number (refer to table below)
+Set the commitment value on all line items of an order. 
+
+This requires providing the internal ID of the Sales Order as a number and the internal ID of the commitment status as a number (refer to table below)
 
 * 30 Governance Units
 
