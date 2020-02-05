@@ -10,16 +10,17 @@ These functions are located in the GH_1scContinuityFunctions library.
 
 ```javascript
 //Include in defines
-define(["./GH_1scContinuityFunctions"], function (GH_1scContinuityFunctions)
+define(["../ghmfiles/GH_1scContinuityFunctions"], function (GH_1scContinuityFunctions){
 
 //Sample in use
 var recurringUpdate = GH_1scContinuityFunctions.updateRecurringOrder(recurringObject)
+};
 ```
 
 
 ```typescript
 //Include in imports
-import {updateRecurringOrder} from './GH_1scContinuityFunctions'
+import {updateRecurringOrder} from '../ghmfiles/GH_1scContinuityFunctions'
 
 //Sample in use
 let recurringUpdate = updateRecurringOrder(recurringObject)
@@ -54,7 +55,7 @@ status | string | (Optional) The status of the recurring record, required for up
 
 ```javascript
 //Include in defines
-define(["./GH_1scContinuityFunctions"], function (GH_1scContinuityFunctions)
+define(["../ghmfiles/GH_1scContinuityFunctions"], function (GH_1scContinuityFunctions)
 
 //Sample in use
 var importRecurring = GH_1scContinuityFunctions.importRecurringOrder(recurringObject)
@@ -63,7 +64,7 @@ var importRecurring = GH_1scContinuityFunctions.importRecurringOrder(recurringOb
 
 ```typescript
 //Include in imports
-import {importRecurringOrder} from './GH_1scContinuityFunctions'
+import {importRecurringOrder} from '../ghmfiles/GH_1scContinuityFunctions'
 
 //Sample in use
 let importRecurring = importRecurringOrder(recurringObject)
@@ -97,7 +98,7 @@ status | string | (Optional) The status of the recurring record, required for up
 
 ```javascript
 //Include in defines
-define(["./GH_1scContinuityFunctions"], function (GH_1scContinuityFunctions)
+define(["../ghmfiles/GH_1scContinuityFunctions"], function (GH_1scContinuityFunctions)
 
 //Sample in use
 var recurringId = GH_1scContinuityFunctions.locateRecurringRecord(string)
@@ -105,7 +106,7 @@ var recurringId = GH_1scContinuityFunctions.locateRecurringRecord(string)
 
 ```typescript
 //Include in imports
-import {locateRecurringRecord} from './GH_1scContinuityFunctions'
+import {locateRecurringRecord} from '../ghmfiles/GH_1scContinuityFunctions'
 
 //Sample in use
 var recurringId = locateRecurringRecord(string)
